@@ -12,14 +12,24 @@
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wiki</h2>
-                <form action="http://127.0.0.1:8000/wiki/<str:zoek>/">
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                <!-- <form action="{% url 'wiki:add_file' %}">
+                    <input class="search" type="text" placeholder="Search Encyclopedia">
+                    <input type="submit">
+                </form> -->
+                <form method ="POST">
+                    {% csrf_token %}
+                    <input type = "text" name="search">
+                    <button type= "submit">Search</button>
                 </form>
+                {% if result %}
+                    {{ result }}
+                    <h1> Hallo </h1>
+                {% endif %}
                 <div>
-                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'wiki:index' %}">Home</a>
                 </div>
                 <div>
-                    <a href="{% url 'new_page' %}">Create New Page </a>
+                    <a href="{% url 'wiki:add_file' %}">Create New Page </a>
                 </div>
                 <div>
                     <a href=""> Random Page</a>
