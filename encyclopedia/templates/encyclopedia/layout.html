@@ -14,25 +14,16 @@
                 <h2>Wiki</h2>
                 <form action="{% url 'wiki:search' %}" method="POST">
                     {% csrf_token %}
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                    <input class="search" type="text" name="zoekterm" placeholder="Search Encyclopedia">
                 </form>
-                <!-- <form method ="POST">
-                    {% csrf_token %}
-                    <input type = "text" name="search">
-                    <button type= "submit">Search</button>
-                </form>
-                {% if result %}
-                    {{ result }}
-                    <h1> Hallo </h1>
-                {% endif %} -->
                 <div>
                     <a href="{% url 'wiki:index' %}">Home</a>
                 </div>
                 <div>
-                    <a href="{% url 'wiki:add_file' %}">Create New Page </a>
+                    <a href="{% url 'wiki:new_page' %}">Create New Page </a>
                 </div>
                 <div>
-                    <a href=""> Random Page</a>
+                    <a href="{% url 'wiki:random_page' %}">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}

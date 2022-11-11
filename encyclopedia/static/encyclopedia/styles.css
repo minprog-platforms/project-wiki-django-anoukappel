@@ -13,10 +13,22 @@ h1 {
 }
 
 textarea {
-    height: 90vh;
+    height: 50vh;
     width: 80%;
 }
 
+button {
+    height: 10vh;
+    width: 30%;
+}
+
+li {
+    width: 20%;
+}
+
+ul {
+    width: 50%:
+}
 .main {
     padding: 10px;
 }
