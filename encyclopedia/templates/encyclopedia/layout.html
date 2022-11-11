@@ -12,11 +12,11 @@
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wiki</h2>
-                <!-- <form action="{% url 'wiki:add_file' %}">
-                    <input class="search" type="text" placeholder="Search Encyclopedia">
-                    <input type="submit">
-                </form> -->
-                <form method ="POST">
+                <form action="{% url 'wiki:search' %}" method="POST">
+                    {% csrf_token %}
+                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                </form>
+                <!-- <form method ="POST">
                     {% csrf_token %}
                     <input type = "text" name="search">
                     <button type= "submit">Search</button>
@@ -24,7 +24,7 @@
                 {% if result %}
                     {{ result }}
                     <h1> Hallo </h1>
-                {% endif %}
+                {% endif %} -->
                 <div>
                     <a href="{% url 'wiki:index' %}">Home</a>
                 </div>
